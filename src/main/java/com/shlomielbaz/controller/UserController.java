@@ -1,8 +1,9 @@
 package com.shlomielbaz.controller;
 
 import com.shlomielbaz.entity.User;
-import com.shlomielbaz.interfaces.ICrusService;
+import com.shlomielbaz.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,8 @@ import java.util.List;
 @RequestMapping("api/users")
 public class UserController {
 
-    private ICrusService userService;
+    @Autowired
+    private UserService userService;
 
     // build create User REST API
     @PostMapping

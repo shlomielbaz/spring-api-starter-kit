@@ -4,6 +4,7 @@ import com.shlomielbaz.entity.User;
 import com.shlomielbaz.interfaces.ICrusService;
 import com.shlomielbaz.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +12,9 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class UsersService implements ICrusService<User> {
+public class UserService implements ICrusService<User> {
+
+    @Autowired
     private UserRepository userRepository;
 
     @Override
